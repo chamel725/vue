@@ -12,7 +12,7 @@
         {{year}}<br>
         <!-- <button v-on:click="plus">더하기</button>
         <button v-on:click="minus">빼기</button> -->
-        <form v-on:keyup.enter="submit">     <!--form:submit후 빠르게 reload-->
+        <form v-on:submit.prevent="submit">     <!--form:submit후 빠르게 reload, -->
             <input type="text"><br>
             <button type="submit">click</button>
         </form>
