@@ -10,17 +10,25 @@
 <body>
     <div id="app">
         {{ nextYear('안녕하세요') }}<!--인자:argument-->
+        <input :type="type" :value="iunputdata"> <!--v-bind생략가능-->
+        <a :href="getKossiecoderLink('kossiecoder')">코지코더</a>
         </div>
-        <script>
+        <script>    
             new Vue({//vue에서 제공하는 function을 이용해 인스턴스 생성.
                 el:'#app',//app를 넣어주면서 div태그 안에 vue코드 작성가능.
                 data:{
                     person: {
                         name:'chamel', //변수 생성.
                         age: 33//이 데이터들은 this에 넣어줌.
-                    }
+                    },
+                    inputdata: 'hello', //이 인풋 데이터를 상위 인풋 value로 연결.
+                    type: 'text' ,//입력창 타입 ex)number는 숫자만 입력만 가능.
+                    link: 'https://www.youtube.com/'
                 },
                 methods: {
+                    getKossiecoderLink(channel){
+                        return this.link + channel;
+                    },
                     nextYear(greeting) {//매개변수:parameter
                         return greeting + '!' + this.person.name + '는 내년에' + (this.person.age + 1) + '살 입니다.';
                     },//함수를 이용해 원하는 로직을 짜고 리턴.
