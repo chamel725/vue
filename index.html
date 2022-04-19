@@ -11,7 +11,7 @@
     <div id="app">
         {{ nextYear('안녕하세요') }}<!--인자:argument-->
         <input :type="type" :value="iunputdata"> <!--v-bind생략가능-->
-        <a :href="getKossiecoderLink('kossiecoder')">코지코더</a>
+        <a :href="getNaverLink('index')">NaverSports</a>
         </div>
         <script>    
             new Vue({//vue에서 제공하는 function을 이용해 인스턴스 생성.
@@ -23,10 +23,10 @@
                     },
                     inputdata: 'hello', //이 인풋 데이터를 상위 인풋 value로 연결.
                     type: 'text' ,//입력창 타입 ex)number는 숫자만 입력만 가능.
-                    link: 'https://www.youtube.com/'
+                    link: 'https://sports.news.naver.com/'
                 },
                 methods: {
-                    getKossiecoderLink(channel){
+                    getNaverLink(channel){
                         return this.link + channel;
                     },
                     nextYear(greeting) {//매개변수:parameter
