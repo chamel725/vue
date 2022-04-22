@@ -12,8 +12,10 @@
         {{year}}<br>
         <!-- <button v-on:click="plus">더하기</button>
         <button v-on:click="minus">빼기</button> -->
-        <form v-on:submit.prevent="submit">     <!--form:submit후 빠르게 reload, -->
-            <input type="text"><br>
+        <form v-on:submit.prevent="submit">     <!--form:submit후 빠르게 reload, prevent로form reload방지-->
+            <!-- <input type="text" value="text" @keyup="upateText"><br>    v-on:@로 대체 가능.변수 text를 넣기 위해 value설정 -->
+            <input type="text" v-model="text"><br><!--양방향바인딩-->
+            {{text}}<br><!--변수선언-->
             <button type="submit">click</button>
         </form>
     </div>
@@ -21,7 +23,8 @@
         new Vue({
             el: '#app',
             data: {
-                year: 2022
+                year: 2022,
+                text:'text'
             },
             methods: {
                 alert() {
@@ -35,8 +38,12 @@
                 },
                 submit(){
                     alert('submited');
-                    console.log('hello');
+                    console.log('hello'); //console에 인자 넣어서 로그 확인.
                 }
+                // upateText(event){
+                //     console.log(event);
+                //     this.text = event.target.value;
+                // }
             }
         })
     </script>
