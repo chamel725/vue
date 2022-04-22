@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <!-- <template v-if="number === 1">토글 랜더링 비용이 높기 때문에 자주 바뀌지 않을 때는 v-if
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+        </template>
+        <div v-else-if="number === 2">2입니다.</div>
+        <div v-else>no</div> -->    
+        <div v-show="show">Yes</div><!--초기 랜더링 비용이 높기때문에 자주 바꾸기를 원할 땐 show-->
+        <button @click="toggleShow">toggle</button>
+    </div>
+    <script>
+        new Vue({
+            el:'#app',
+            data:{
+                show:false,
+                number:1
+            },
+            methods:{
+                increaseNumber(){
+                    this.number ++;
+                },
+                toggleShow(){
+                    this.show = !this.show;
+                }
+            }
+        })
+    </script>    
+</body>
+</html>

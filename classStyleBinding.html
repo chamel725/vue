@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .red{
+            color: red;
+        }
+        .font-bold{
+            font-weight: bold;
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <!-- <div :class="{red: isRed, 'font-bold': isBold}">hello</div><br>객체를 통째로 넣는 방법:class2개 이상 쉼표,-들어가는 클래스명 스트링으로 묶자. -->
+        <div :style="{color:red, fontSize: size}">hello</div><!--font-size=fontSize로대체가능.--><br>
+        <div :style="{color:green, fontSize: size1}">green</div>
+        <!-- <div :style="sytleObject">hello</div> -->
+        <button @click="update">Click</button>
+    </div>
+    <script>
+        new Vue({
+            el:'#app',
+            data:{
+                isRed: false,
+                isBold: false,
+                size: '30px',
+                red:'red',
+                green:'green',
+                size1:'15px'
+
+                // // styleObject:{
+                // //     color:'red',
+                // //     fontSize:'40px'
+                // }
+            },
+            methods:{
+                update(){
+                    this.isRed = !this.isRed;
+                    this.isBold = !this.isBold;
+                }
+            }
+        })
+    </script>
+    
+</body>
+</html>
