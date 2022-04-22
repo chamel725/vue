@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title><!--느낌표 탭으로htmlplate자동완성.-->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script><!--CDN:script직접 넣기.-->
+</head>
+<body>
+    <div id="app"><!--div#app 단축키로 태그 자동완성-->
+        <button @click="changeMessage">click</button> 
+        {{ reversedMessage }}<!--{{}}안에는 javascript문법이 들어갈 수 있다.
+        message.split(''):String문자를 하나씩 잘라서 array안에 담아준다.
+        reverse:순서가 거꾸로 바뀜. join:array에 들어갔던 값들이 합쳐져 String으로 돌아온다.-->
+    </div><!--밑에서 vue인스턴스를 생성 및 app을 추가하면서 div태그 안에 vue코드 작성가능.-->
+        <script>
+            new Vue({//Vue에서 제공하는 펑션.Vue인스턴스 추가
+                el: '#app ',
+                data:{
+                    message:'안녕하세요'
+                },
+                methods:{//캐싱x
+                    changeMessage(){
+                        return  this.message = '코지코더';
+                    }
+
+                },
+                computed:{ //중복제거효과,캐싱,vue인스턴스가 생성될 때 계산완료.
+                    reversedMessage(){
+                        return this.message.split('').reverse().join('')
+                    }
+                }
+            })
+        </script>
+</body>
+</html>
