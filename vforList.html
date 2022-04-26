@@ -22,7 +22,7 @@
             {{people[3].name}} {{people[3].age}}
         </div>
         <hr>
-        <div v-for="(person,index) in people" :key="person.id"><!--for반복문 in대신 of를 써도 똑같은 결과.고유한 key속성 부여(유니크한 값이 되도록 변경.person.name + '-' + person.age)-->
+        <div v-for="(person,index) in people" :key="person.id"><!--for반복문 in대신 of를 써도 똑같은 결과.고유한 key속성 부여(유니크한 값이 되도록 변경.person.name + '-' + person.age), id가 아닌 index로 키를 지정할 경우 애매해서 추천x-->
             {{person.name}} {{person.age}}  {{index}}
         </div>
     </div>
